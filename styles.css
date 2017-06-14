@@ -1,0 +1,86 @@
+body {
+  background: darkgrey;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-around;
+  background-image: linear-gradient(to top, deeppink, springgreen, turquoise);
+  height: 100vh;
+  position: relative;
+}
+
+.freddy {
+  z-index: 2;
+  position: absolute;
+  top: 300px;
+}
+
+.freddy:hover {
+  transition: 5s linear;
+  transform: rotate(2200deg);
+}
+
+.outer {
+  width: 180px;
+  height: 180px;
+  background-image: radial-gradient(ellipse farthest-corner at 45px 45px, mistyrose, thistle, mintcream);
+  animation: square-to-circle 5s .3s infinite alternate;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.inner {
+  animation: hi-lite 5s 1s infinite alternate;
+  text-align: center;
+  color: mediumpurple;
+}
+
+@keyframes square-to-circle {
+  0%  {
+    border-radius:50%;
+    background-image: radial-gradient(ellipse farthest-corner at 45px 45px, mistyrose, thistle, mintcream);
+    transform: scale(.9) rotate(0deg);
+  }
+  25%  {
+    border-radius:50% 0 0 0;
+    background: radial-gradient(ellipse farthest-corner at 45px 45px, thistle, mintcream, peachpuff);
+    transform: scale(.6) rotate(45deg);
+  }
+  50%  {
+    border-radius:50% 50% 0 0;
+    background: radial-gradient(ellipse farthest-corner at 45px 45px, mintcream, peachpuff, paleturquoise);
+    transform: scale(.9) rotate(90deg);
+  }
+  75%  {
+    border-radius:50% 50% 50% 0;
+    background: radial-gradient(ellipse farthest-corner at 45px 45px, peachpuff, paleturquoise, lightyellow);
+    transform:scale(.9) rotate(135deg);
+  }
+  100% {
+    border-radius:50%;
+    background: radial-gradient(ellipse farthest-corner at 45px 45px, paleturquoise, lightyellow, mistyrose);
+    transform: scale(.9) rotate(180deg);
+  }
+}
+
+@keyframes hi-lite {
+  0%  {
+    transform:rotate(0deg);
+  }
+  25%  {
+    transform:rotate(180deg);
+    color: mediumseagreen;
+  }
+  50%  {
+    transform:rotate(180deg);
+    color: mediumslateblue;
+  }
+  75%  {
+    transform:rotate(180deg);
+    color: salmon;
+  }
+  100% {
+    transform:rotate(180deg);
+    color: orchid;
+  }
+}
